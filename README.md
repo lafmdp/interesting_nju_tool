@@ -1,8 +1,6 @@
 # NJU-health-report
 ![](https://img.shields.io/badge/language-python-brightgreen)
 
-南京大学每日健康填报自动打卡脚本。
-
 ## 说明
 - 本项目仅供学习交流使用。开发者对项目造成产生的后果不负任何责任，也不保证本方案一直有效。请使用者对自己负责。
 - 使用前须将项目 Fork 至自己的仓库，此时密钥只有自己才知道，可以保证信息的安全，请放心使用。 
