@@ -30,3 +30,4 @@ jobs:
           CURR_LOCATION: ${{ secrets.location }}
         run: |
           python run.py
+      - uses: gautamkrishnar/keepalive-workflow@master # using the workflow with default settings
