@@ -25,7 +25,7 @@ def get_zjhs_time(method='YESTERDAY'):
     yesterday = today + datetime.timedelta(-1)
     if method == 'YESTERDAY':
         # new_time = yesterday.strftime("%Y-%m-%d %-H")
-        return f"{yesterday.year}-{padding(yesterday.month)}-{padding(yesterday.day)} {random.randint(9,18)}"
+        return f"{yesterday.year}-{padding(yesterday.month)}-{padding(yesterday.day)} {random.randint(10,18)}"
 
         # return yesterday.strftime("%Y-%m-%d %-H")
 
