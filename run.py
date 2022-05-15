@@ -4,6 +4,14 @@ import os
 import logging
 from report import apply
 
+def get_location():
+    import random
+
+    return random.choice(["江苏省南京市栖霞区九乡河东路", "江苏省南京市栖霞区仙林大道163号", "江苏省南京市栖霞区仙林湖路", "江苏省南京市栖霞区南京大学仙林校区逸夫楼",
+                          "江苏省南京市栖霞区南大和园", "江苏省南京市鼓楼区两江路", "江苏省南京市鼓楼区广州路", "江苏省南京市鼓楼区汉口路22号", "江苏省南京市鼓楼区珠江路",
+                          "江苏省南京市鼓楼区汉口路小学", "江苏省南京市南京大学鼓楼校区南园", "江苏省南京市南京大学鼓楼校区教学楼", "江苏省南京市南京大学仙林校区",
+                          "江苏省南京市南京大学仙林校区左涤江楼","江苏省南京市南京大学仙林校区图书馆", "江苏省南京市南京大学仙林校区星云楼"])
+
 
 def login(username, password, logger, auth: NjuUiaAuth):
     """
@@ -35,7 +43,7 @@ if __name__ == "__main__":
 
     username = os.getenv('NJU_USERNAME')
     password = os.getenv('NJU_PASSWORD')
-    curr_location = os.getenv('CURR_LOCATION')
+    curr_location = get_location()
     method = os.getenv('COVID_TEST_METHOD')
 
     if method == '':
