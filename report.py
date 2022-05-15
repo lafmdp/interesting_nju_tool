@@ -11,12 +11,24 @@ URL_JKDK_APPLY = 'http://ehallapp.nju.edu.cn/xgfw/sys/yqfxmrjkdkappnju/apply/sav
 URL_JKDK_INDEX = 'http://ehallapp.nju.edu.cn/xgfw/sys/mrjkdkappnju/index.do'
 
 
+
 def get_zjhs_time(method='YESTERDAY'):
+    def padding(n):
+        assert n > 0
+        if n > 9:
+            return str(n)
+        else:
+            return f"0{n}"
+
     """获取最近核酸时间"""
     today = datetime.datetime.now(timezone('Asia/Shanghai'))
     yesterday = today + datetime.timedelta(-1)
     if method == 'YESTERDAY':
-        return yesterday.strftime(f"%Y-%m-%d %-{random.randint(9,17)}")
+        # new_time = yesterday.strftime("%Y-%m-%d %-H")
+        return f"{yesterday.year}-{padding(yesterday.month)}-{padding(yesterday.day)} {random.randint(9,18)}"
+
+        # return yesterday.strftime("%Y-%m-%d %-H")
+
 
 
 def apply(curr_location, logger, auth: NjuUiaAuth, covidTestMethod='YESTERDAY', force=False):
